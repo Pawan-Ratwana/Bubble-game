@@ -21,8 +21,8 @@ body {
 }
 
 #panel {
-  width: 80%;
-  height: 80%;
+  width: 90%;
+  height: 90%;
   background-color: #fff;
   border-radius: 7px;
   overflow: hidden;
@@ -93,19 +93,35 @@ body {
 
 /* Media Queries for Responsive Design */
 /* Styles for screens between 150px and 250px */
-@media screen and (min-width: 150px) and (max-width: 250px) {
-  #ptop {
-    padding: 0; /* Remove padding for smaller screens */
+@media screen and (min-width: 100px) and (max-width: 155px) {
+  #hit-container,
+  #timer-container {
+    display: flex;
+    position: relative;
+    right: 30px;
+    margin-left: 3px;
+  }
+
+  #score-container {
+    margin-top: auto; /* Push Score to the bottom */
+    position: relative;
+    right: 95px;
+    margin-bottom: 5px;
+  }
+  .elem {
+    gap: 3px;
   }
 
   .elem h2 {
-    font-weight: 400;
-    font-size: 0.8rem; /* Make elements take full width on smaller screens */
+    font-weight: 200;
+    font-size: 0.9rem; /* Make elements take full width on smaller screens */
   }
 
   .bubble {
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
+    padding: 13px;
+    font-size: 15px;
   }
 
   .box {
@@ -114,13 +130,44 @@ body {
   }
 
   #pbtm {
-    gap: 2px;
-    padding: 4px;
+    gap: 1px;
+    padding: 3px;
+  }
+}
+
+@media screen and (min-width: 156px) and (max-width: 240px) {
+  #ptop {
+    padding: 0 5px; /* Remove padding for smaller screens */
+  }
+  .elem {
+    gap: 3px;
+  }
+
+  .elem h2 {
+    font-weight: 400;
+    font-size: 0.7rem; /* Make elements take full width on smaller screens */
+  }
+
+  .bubble {
+    width: 10px;
+    height: 10px;
+    padding: 13px;
+    font-size: 15px;
+  }
+
+  .box {
+    padding: 2px 4px;
+    font-size: 0.8rem;
+  }
+
+  #pbtm {
+    gap: 1px;
+    padding: 3px;
   }
 }
 
 /* Styles for screens between 250px and 350px */
-@media screen and (min-width: 250px) and (max-width: 350px) {
+@media screen and (min-width: 240px) and (max-width: 350px) {
   #ptop {
     padding: 0; /* Remove padding for smaller screens */
   }
@@ -145,7 +192,26 @@ body {
   }
 
   #pbtm {
-    gap: 2px;
+    gap: 6px;
     padding: 4px;
+  }
+}
+
+@media screen and (min-width: 350px) and (max-width: 500px) {
+  #ptop {
+    padding: 0 20px; /* Adjusted padding syntax */
+  }
+  .elem {
+    gap: 5px;
+  }
+  .elem h2 {
+    font-size: 20px;
+  }
+  .box {
+    font-size: 15px;
+  }
+  .bubble {
+    width: 30px;
+    height: 30px;
   }
 }

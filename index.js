@@ -4,7 +4,7 @@ let score = 0;
 // function which make the bubble 
 function makeBubble() {
     let cluster = ""
-    for (let i = 1; i <= 126; i++) {
+    for (let i = 1; i <= 160; i++) {
         const rn = Math.floor(Math.random() * 10);
         cluster += `<div class="bubble">${rn}</div>`
     }
