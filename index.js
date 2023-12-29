@@ -1,4 +1,6 @@
-
+let rNumber;
+let timer = 60;
+let score = 0;
 // function which make the bubble 
 function makeBubble() {
     let cluster = ""
@@ -11,7 +13,7 @@ function makeBubble() {
 }
 
 // to set run the timer
-let timer = 60;
+
 function runTimer() {
     let innerTimer = setInterval(function () {
         if (timer > 0) {
@@ -19,22 +21,33 @@ function runTimer() {
             document.querySelector("#timerVal").textContent = timer;
         } else {
             clearInterval(innerTimer);
+            document.querySelector("#pbtm").innerHTML = (`<h2>Game Over</h2>`);
         }
     }, 1000);
 }
 
 // used when someone hit the bubble then change the valve of hit button
 function getNewHit() {
-    let rn = Math.floor(Math.random() * 10);
-    document.querySelector("#hitVal").textContent = rn
+    rNumber = Math.floor(Math.random() * 10);
+    document.querySelector("#hitVal").textContent = rNumber
 }
-let score = 0;
+
 function increaseScore() {
     score += 10;
     document.querySelector("#scoreVal").textContent = score;
 }
 
+document.querySelector("#pbtm").addEventListener("click", (details) => {
+    let clickedNumber = Number(details.target.textContent);
+    if (clickedNumber === rNumber) {
+        increaseScore();
+        makeBubble();
+        getNewHit()
+    } else {
+        makeBubble();
+    }
+})
+
 makeBubble();
 runTimer()
 getNewHit();
-increaseScore()
